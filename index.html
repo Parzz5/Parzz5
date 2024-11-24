@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="header">
+    <label for="fileInput" class="add-button">+</label>
+    <input type="file" id="fileInput" accept="image/*" style="display: none;" onchange="addImage(event)">
+    <h1>Semua</h1>
+    <button class="save-button" onclick="saveImages()">Save</button>
+  </div>
+  <div class="gallery" id="gallery">
+    <!-- Images will be dynamically loaded -->
+  </div>
+
+  <!-- Modal for enlarged image -->
+  <div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <div class="delete-section">
+      <input type="password" id="ownerPassword" placeholder="Enter owner password">
+      <button class="delete-button" onclick="deleteImage()">Delete</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
